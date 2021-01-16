@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <center>
+  <h1>Online 3gx builder</h1>
+  <form class="textbox" action="/result" target="_blank" method="post">
+    <label>
+      <h4>ID</h4>
+      <input name="user" size="30" placeholder="Within 8 half-width characters" pattern="^([a-zA-Z0-9]{1,8})$" spellcheck="false" autocomplete="off" required>
+    </label>
+    <label>
+      <h4>3gx&ensp;name</h4>
+      <input name="name" size="30" placeholder="Within 16 half-width characters" pattern="^([a-zA-Z0-9]{1,16})$" spellcheck="false" autocomplete="off" required>
+    </label>
+    <label>
+      <h4>Menu</h4>
+      <textarea name="menu" rows="8" cols="80" spellcheck="false" required>menu += new MenuEntry("Test", nullptr, Test);</textarea>
+    </label>
+    <label>
+      <h4>Code</h4>
+      <textarea name="code" rows="25" cols="80" spellcheck="false" required>
+void Test(MenuEntry *entry){
+    (MessageBox("Hello, World!"))();
+}</textarea>
+    </label>
+    <br>
+    <input class="build" type="submit" value="Build">
+  </form>
+  </center>
+</body>
+</html>
